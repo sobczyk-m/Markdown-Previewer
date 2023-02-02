@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
+:root {
+    --primary-bg-color: #3c6e71;
+    --secondary-bg-color: #ccc5b9;
+    --toolbar-bg-color: #353535;
+    --light-silver: #c8c6c1;
+    --medium-silver: #6a737d;
+    --light-gray: #9a9494;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*, ::before, ::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    background-color: #3c6e71;
+    font-family: Monospace, "Times New Roman", serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#editor-container {
+    max-width: 70%;
+    background-color: var(--secondary-bg-color);
+    overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+#editor {
+    width: 100%;
+    min-width: 100%;
+    min-height: 30vh;
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: none;
+    overflow: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#toolbar {
+    color: white;
+    background-color: var(--toolbar-bg-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0 0.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#preview-container {
+    width: 90%;
+    line-height: 2.5rem;
+    overflow: hidden;
+}
+
+#preview {
+    min-height: 70vh;
+    max-height: 95vh;
+    padding: 0.5rem 2rem;
+    overflow: auto;
+}
+
+#preview-container, #editor-container {
+    margin: 1rem auto 2rem;
+    border-radius: 1rem 1rem 1rem 1rem;
+    box-shadow: 0 0 1rem var(--toolbar-bg-color);
+}
+
+#editor, #preview {
+    background-color: var(--secondary-bg-color);
+}
+
+/*
+ * MARKDOWN STYLING
+ */
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 1rem 0;
+    padding: 0.1rem 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+ul, ol {
+    list-style-position: inside;
+}
+
+ul > li, ol {
+    padding-left: 2rem;
+}
+
+img {
+    display: block;
+    width: 30%;
+    height: auto;
+    max-width: 100%;
+}
+
+pre {
+    padding: 1rem;
+}
+
+pre, code {
+    background: var(--light-silver);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 0.2rem 0.7rem;
+    border: 1px solid var(--light-gray);
+}
+
+tr:nth-child(even) {
+    background-color: var(--light-silver);
+}
+
+blockquote {
+    color: var(--medium-silver);
+    padding-left: 1rem;
+    border-left: 0.25rem solid var(--light-gray);
+}
+
+a {
+    color: #4b4bff;
+    text-decoration: none
+}
+
+a:focus {
+    text-decoration: underline;
 }
