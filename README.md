@@ -1,4 +1,4 @@
-# Quote Machine
+# Markdown Previewer
 
 Check out your writing once you've added the Markdown syntax.
 
